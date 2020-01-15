@@ -1,0 +1,17 @@
+<launch>
+  <!-- vim: set ft=xml noet : -->
+  <!-- example launch script for PX4 based FCU's -->
+  <arg name="fcu_url" default="udp://:14520@192.168.1.152:14525" />
+  <arg name="gcs_url" default="udp://@localhost" />
+  <arg name="gcs_url_2" default="udp://@192.168.1.221" />
+  <arg name="tgt_system" default="1" />
+  <arg name="tgt_component" default="1" />
+  <arg name="log_output" default="screen" />
+  <arg name="fcu_protocol" default="v1.0" />
+  <arg name="respawn_mavros" default="false" />
+	
+  <arg name="vrpn_server" default="192.168.1.20"/>
+  <arg name="vrpn_object_name" default="BM_PIX"/>
+
+  <node pkg="x4_drone" type="trajectory_gen.py" name="trajectory_gen_node" output="screen"/>
+</launch>
